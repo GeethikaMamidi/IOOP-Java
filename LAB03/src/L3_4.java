@@ -1,31 +1,36 @@
+public class L3_4 {
+}
 
 class Die {
-	int SideUp;
+	int sideUp;
 
-	void Roll() {
-		this.SideUp = ((int) (Math.random() * 6)) + 1;
-		getSideUp(this.SideUp);
-		}
-	
-	int getSideUp(int x) {
-		System.out.println("Value on Die: ");
-		return x;
+	int getSideUp() {
+		return this.sideUp;
 	}
-}
-class DieDemo{
-	public static void main(String[] args) {
-		int r1,r2;
-		Die d1 = new  Die();
-		Die d2 = new  Die();
-		r1 = d1.Roll();
-		r2 = d2.Roll();
+
+	void roll() {
+		this.sideUp = ((int) (Math.random() * 6)) + 1;
 	}
 }
 
-public class L3_4 {
+class DieDemo {
+	void sum() {
+		Die d1 = new Die();
+		Die d2 = new Die();
 
-	public static void main(String[] args) {
+		d1.roll();
+		d2.roll();
 
+		int a = d1.getSideUp();
+		int b = d2.getSideUp();
+
+		System.out.println("Die 1: " + a);
+		System.out.println("Die 2: " + b);
+		System.out.println("Sum: " + (a + b));
 	}
 
+	public static void main(String[] args) {
+		DieDemo d = new DieDemo();
+		d.sum();
+	}
 }
